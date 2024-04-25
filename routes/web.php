@@ -25,6 +25,7 @@ Route::get('/terms-conditions', [ ArtikelController::class, 'termsConditions' ])
 
 Route::get('/indeks/{search}/{category}/{subcategory}', [ ArtikelController::class, 'index' ]); 
 Route::get('/indeks/{search}/{category}/', [ ArtikelController::class, 'index' ]); 
+Route::get('/indeks/{search}', [ ArtikelController::class, 'index' ]); 
 Route::get('/indeks', [ ArtikelController::class, 'index' ]); 
 
 Route::get('/give-away/{search?}',[ ArtikelController::class, "giveAway"]);

@@ -26,11 +26,11 @@ import SelectedArticles from "../../compoments/sticky_page";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Layout from "../layout/layout";
 
-const SearchingBar = ({ search, category, subcategory }) => {
+const SearchingBar = ({ search_artikel, category, subcategory }) => {
     //url
     let navigateIndex = "/indeks";
 
-    const [searching, setSearching] = useState(search);
+    const [searching, setSearching] = useState(search_artikel);
 
     const handleChange = (e) => {
         const newText = e.target.value;
@@ -39,7 +39,7 @@ const SearchingBar = ({ search, category, subcategory }) => {
 
     const Searching = (e) => {
         e.preventDefault();
-        var search = searching;
+        var search = removeSpace(searching);
 
         if (search !== "") {
             window.location.href = `${
@@ -112,7 +112,7 @@ const WrapperSearching = ({ categories, search }) => {
                     </svg>
                 </div>
 
-                <SearchingBar />
+                <SearchingBar search_artikel={search} />
 
                 {/* FIlter Category */}
                 <div className="absolute right-3 bottom-2.5 ms-5">
