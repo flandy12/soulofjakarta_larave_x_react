@@ -135,16 +135,20 @@ const GiveAway = ({
             <div className="mobile-ads-headline">
                 <AdsBennerMobile
                     image={
-                        background_banner_ads !== undefined
+                        headline_ads !== undefined && headline_ads.length > 0
                             ? headline_ads[0].mobile_webp_image
                             : ""
                     }
                     url={
-                        background_banner_ads !== undefined
+                        headline_ads !== undefined && headline_ads.length > 0
                             ? headline_ads[0].link
                             : ""
                     }
-                    status={headline_ads !== undefined ? true : false}
+                    status={
+                        headline_ads !== undefined && headline_ads.length > 0
+                            ? true
+                            : false
+                    }
                 />
             </div>
             <Navbar>
@@ -257,29 +261,29 @@ const GiveAway = ({
             <div className="all-ads">
                 <AdsBennerSideLeft
                     image={
-                        background_banner_ads !== undefined
+                        background_banner_ads[0]
                             ? background_banner_ads[0].desktop_ad_file
                             : ""
                     }
                     url={
-                        background_banner_ads !== undefined
+                        background_banner_ads[0]
                             ? background_banner_ads[0].link
                             : ""
                     }
-                    status={background_banner_ads !== undefined ? true : false}
+                    status={background_banner_ads[0] ? true : false}
                 />
                 <AdsBennerSideRight
                     image={
-                        background_banner_ads !== undefined
+                        background_banner_ads[0]
                             ? background_banner_ads[0].desktop_ad_file
                             : ""
                     }
                     url={
-                        background_banner_ads !== undefined
+                        background_banner_ads[0]
                             ? background_banner_ads[0].link
                             : ""
                     }
-                    status={background_banner_ads !== undefined ? true : false}
+                    status={background_banner_ads[0] ? true : false}
                 />
             </div>
             {dataApi.length > 0 ? (
@@ -289,13 +293,13 @@ const GiveAway = ({
                             <div className="block lg:hidden md:hidden sticky top-16">
                                 <AdsBennerDesktop
                                     image={
-                                        background_banner_ads !== undefined
+                                        background_banner_ads[0]
                                             ? background_banner_ads[0]
                                                   .mobile_webp_image
                                             : ""
                                     }
                                     url={
-                                        background_banner_ads !== undefined
+                                        background_banner_ads[0]
                                             ? background_banner_ads[0].link
                                             : ""
                                     }
@@ -310,20 +314,16 @@ const GiveAway = ({
                             <div className="desktop-ads-headline sticky top-16">
                                 <AdsBennerDesktop
                                     image={
-                                        headline_ads !== undefined
+                                        headline_ads[0]
                                             ? headline_ads[0].desktop_webp_image
                                             : ""
                                     }
                                     url={
-                                        headline_ads !== undefined
+                                        headline_ads[0]
                                             ? headline_ads[0].link
                                             : ""
                                     }
-                                    status={
-                                        headline_ads !== undefined
-                                            ? true
-                                            : false
-                                    }
+                                    status={headline_ads[0] ? true : false}
                                 />
                             </div>
 
@@ -537,23 +537,17 @@ const GiveAway = ({
                                     <PopularArticle
                                         data_value={popular_article}
                                         image_ads={
-                                            premium_ads !== undefined
+                                            premium_ads[0]
                                                 ? premium_ads[0]
                                                       .desktop_webp_image
                                                 : " "
                                         }
                                         url={
-                                            premium_ads !== undefined &&
                                             premium_ads[0]
                                                 ? premium_ads[0].link
                                                 : ""
                                         }
-                                        status={
-                                            premium_ads !== undefined &&
-                                            premium_ads[0]
-                                                ? true
-                                                : false
-                                        }
+                                        status={premium_ads[0] ? true : false}
                                     />
 
                                     <RecommendationArticle
@@ -640,11 +634,11 @@ const GiveAway = ({
                 <div className="container mx-auto ">
                     <picture className="w-full mx-auto text-center">
                         <source
-                            srcSet="/lmage/error/NOT-FOUND.webp"
+                            srcSet="/images/error/NOT-FOUND.webp"
                             type="image/webp"
                         />
                         <img
-                            src="/lmage/error/NOT-FOUND.png"
+                            src="/images/error/NOT-FOUND.png"
                             alt="soulofjakarta.id"
                             className="mx-auto"
                         />
