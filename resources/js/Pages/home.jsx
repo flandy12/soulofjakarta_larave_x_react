@@ -167,7 +167,7 @@ const HomePage = ({
                                     />
                                 </div>
 
-                                <div className="relative z-40 bg-black">
+                                <div className="relative z-40 ">
                                     <Swiper
                                         slidesPerView={"auto"}
                                         spaceBetween={30}
@@ -381,9 +381,9 @@ const HomePage = ({
                         </div>
                         <div className="col"></div>
                     </div>
-                    <div className="grid gap-2 mx-auto desktop-home bg-black">
+                    <div className="grid gap-2 mx-auto desktop-home ">
                         <div className="xl:col-span-6 md:col-span-6 container">
-                            <div className="hidden xl:block md:block relative z-40 bg-black">
+                            <div className="hidden xl:block md:block relative z-40 ">
                                 <div className="desktop-ads-headline sticky top-16">
                                     <AdsBennerDesktop
                                         image={
