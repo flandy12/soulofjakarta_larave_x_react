@@ -17,8 +17,6 @@ use Inertia\Inertia;
 
 Route::get('/', [ArtikelController::class, 'home']);
 
-
-
 Route::get('/privacy-policy', [ ArtikelController::class, 'privacyPolicy' ]);
 
 Route::get('/media-partner', [ ArtikelController::class, 'medpar' ]); 
