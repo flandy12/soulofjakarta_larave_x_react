@@ -78,7 +78,7 @@ const GiveAway = ({
     const [offset, setOffset] = useState(page);
 
     //DropdownActive
-    let [searching, setSearching] = useState("");
+    let [searching, setSearching] = useState(search);
 
     //Action pagination
     let PageHandle = () => {
@@ -101,9 +101,7 @@ const GiveAway = ({
         e.preventDefault();
         var search = e.target.search.value;
         setSearching(search);
-        window.location.href = `${navigateIndex}/${removeSpace(
-            search.toLowerCase()
-        )}`;
+        window.location.href = `${navigateIndex}/${removeSpace(search)}`;
     };
 
     //Action Searching
@@ -329,7 +327,7 @@ const GiveAway = ({
 
                             <div className="md:grid grid-cols-3 my-3 wrapper-content-detail relative z-40 bg-white pt-3">
                                 <div className="col-span-2 relative bg-white">
-                                    <form className="mb-4" onSubmit={Searching}>
+                                    {/* <form className="mb-4" onSubmit={Searching}>
                                         <label className="mb-2 text-sm font-medium text-gray-900 sr-only">
                                             Search
                                         </label>
@@ -366,7 +364,7 @@ const GiveAway = ({
                                                 Search
                                             </button>
                                         </div>
-                                    </form>
+                                    </form> */}
 
                                     <div className="absolute right-0 top-16">
                                         <div
