@@ -309,7 +309,7 @@ class ArtikelController extends Controller
             'category' => $category,
             'sub_category' => $sub_category,
             'category_active' => true,
-        ])->withViewData(['meta' => $meta]);;
+        ])->withViewData(['meta' => $meta]);
     }
 
     public function popularIndex(Request $request, $search = null, $category = null, $sub_category = null) {
@@ -388,6 +388,12 @@ class ArtikelController extends Controller
 
         //Call Function API Ads Awarenes
         awarenes($DataAPI['content']['results']['ads'],'ads');
+
+        $meta=['title' => $meta_title,
+        'meta_keywords' => 'Soulofjakarta,soul,jakarta, event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
+        'meta_description' => 'Artikel rekomendasi Soulofjakarta tentang event dan lifestyle di Indonesia dan Internasional',
+        'author' => 'Soulofjakarta',
+        'og_image' => asset('images/logo_souja.jpg')];
         
         return Inertia('artikel/populer/page', [
             'Popular_Article_Index' => $Popular_Article_Index,
@@ -405,16 +411,12 @@ class ArtikelController extends Controller
             'Categories_Navbar' => $Categories_Navbar,
 
             'search' => $search,
-            'meta_title' => $meta_title,
-            'meta_description'=> 'Artikel terbaru hari ini dari event dan lifestyle khusus di Indonesia dan Internasional',
-            'meta_keywords'=> 'Soulofjakarta,soul,jakarta, event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
-            'og_image' => asset('images/logo_souja.jpg'),
             'search' => $search == 'semua' ? '' : $search,
             'author' => 'Soulofjakarta',
             'searchUrl' => $searchUrl,
             'category' => $category,
             'sub_category' => $sub_category,
-        ]);
+        ])->withViewData(['meta' => $meta]);;
     }
 
     public function rekomendasiIndex(Request $request, $search = null) {

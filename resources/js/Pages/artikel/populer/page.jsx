@@ -3,7 +3,7 @@ import { awarenes, fetchData, removeSpace } from "../../../helper/helper";
 import Loading from "../../../compoments/loading";
 
 import RecommendationArticle from "../../../compoments/recomentdation_article";
-import ImageDefault from "asset/noImage.png";
+import ImageDefault from "@asset/noImage.png";
 import {
     AdsBennerDesktop,
     AdsBennerMobile,
@@ -487,10 +487,6 @@ const IndexPagePopuler = ({
             </>
         );
     };
-
-    if (loading) {
-        return <Loading />;
-    }
 
     return (
         <>
