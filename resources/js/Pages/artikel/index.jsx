@@ -76,7 +76,7 @@ const SearchingBar = ({ search_artikel, category, subcategory }) => {
     );
 };
 
-const WrapperSearching = ({ categories, search }) => {
+const WrapperSearching = ({ categories, search_key }) => {
     //url
     let navigateIndex = "/indeks";
 
@@ -88,6 +88,7 @@ const WrapperSearching = ({ categories, search }) => {
             : setDropdownActive(false);
     };
 
+    console.log(search_key);
     return (
         <>
             <label className="mb-2 text-sm font-medium border  text-gray-900 sr-only bg-gray-50  dark:text-white">
@@ -112,7 +113,7 @@ const WrapperSearching = ({ categories, search }) => {
                     </svg>
                 </div>
 
-                <SearchingBar search_artikel={search} />
+                <SearchingBar search_artikel={search_key} />
 
                 {/* FIlter Category */}
                 <div className="absolute right-3 bottom-2.5 ms-5">
@@ -130,7 +131,7 @@ const WrapperSearching = ({ categories, search }) => {
                 <div className="absolute right-0 top-16">
                     <div
                         id="dropdown"
-                        className={`z-10 bg-white border shadow-sm divide-y divide-gray-100 rounded-lg shadow w-44 ${
+                        className={`z-10 bg-white border divide-y divide-gray-100 rounded-lg shadow w-44 ${
                             dropdownActive ? "" : "hidden"
                         }`}
                     >
@@ -150,8 +151,10 @@ const WrapperSearching = ({ categories, search }) => {
                                         <li key={key}>
                                             <a
                                                 href={`${navigateIndex}/${
-                                                    search
-                                                        ? `${search}/`
+                                                    search_key
+                                                        ? `${removeSpace(
+                                                              search_key
+                                                          )}/`
                                                         : "semua/"
                                                 }${value.name.toLowerCase()}/${removeSpace(
                                                     values.name.toLowerCase()
@@ -530,7 +533,10 @@ const IndexPage = ({
 
                             <div className="relative grid col-span-1 xl:grid-cols-3 md:grid-cols-3 wrapper-content z-50 bg-white">
                                 <div className="col-span-2 relative me-4">
-                                    <WrapperSearching categories={categories} />
+                                    <WrapperSearching
+                                        categories={categories}
+                                        search_key={search}
+                                    />
                                     <div></div>
                                     <div className="space-y-5 mt-5">
                                         {dataApi.length > 0 ? (

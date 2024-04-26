@@ -309,6 +309,7 @@ class ArtikelController extends Controller
             'category' => $category,
             'sub_category' => $sub_category,
             'category_active' => true,
+           
         ])->withViewData(['meta' => $meta]);
     }
 
