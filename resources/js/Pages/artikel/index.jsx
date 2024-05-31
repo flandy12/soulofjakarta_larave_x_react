@@ -757,7 +757,7 @@ const IndexPage = ({
                                         url={
                                             premium_ads !== undefined &&
                                             premium_ads[0]
-                                                ? premium_ads[1].link
+                                                ? premium_ads[0].link
                                                 : ""
                                         }
                                         status={
