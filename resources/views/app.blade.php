@@ -25,7 +25,9 @@
         <meta name="keywords" content="{{ $meta['meta_keywords']}} " itemprop="keywords" />
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link rel="canonical" href="{{ $meta['title'] }}" />
+       
+        <link rel="canonical" href="https://13.250.116.98" />
+
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q062G19HNS"></script>
     
         <script>
