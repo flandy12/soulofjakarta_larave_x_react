@@ -167,7 +167,7 @@ const HomePage = ({
                                     />
                                 </div>
 
-                                <div className="relative z-40 ">
+                                {/* <div className="relative z-40 ">
                                     <Swiper
                                         slidesPerView={"auto"}
                                         spaceBetween={30}
@@ -376,7 +376,7 @@ const HomePage = ({
                                             </a>
                                         </SwiperSlide>
                                     </Swiper>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="col"></div>
@@ -437,6 +437,7 @@ const HomePage = ({
                                                     />
                                                     <img
                                                         loading="lazy"
+                                                        fetchPriority="high"
                                                         src={
                                                             headlines[0]
                                                                 ? headlines[0]
@@ -526,6 +527,7 @@ const HomePage = ({
                                                             />
                                                             <img
                                                                 loading="lazy"
+                                                                fetchpriority="high"
                                                                 src={
                                                                     headlines[1]
                                                                         ? headlines[1]
@@ -611,6 +613,7 @@ const HomePage = ({
                                                             />
                                                             <img
                                                                 loading="lazy"
+                                                                fetchPriority="high"
                                                                 src={
                                                                     headlines[2]
                                                                         ? headlines[2]
@@ -738,8 +741,23 @@ const HomePage = ({
                                             ? popup_image[0].desktop_ad_file
                                             : ""
                                     }
+                                    width={
+                                        popup_image !== undefined &&
+                                        popup_image.length > 0
+                                            ? popup_image[0].desktop_ad_file
+                                                  .width
+                                            : ""
+                                    }
+                                    height={
+                                        popup_image !== undefined &&
+                                        popup_image.length > 0
+                                            ? popup_image[0].desktop_ad_file
+                                                  .height
+                                            : ""
+                                    }
                                     className="w-[400px]"
                                     alt="ads-image"
+                                    fetchPriority="high"
                                 />
                             </picture>
                         </a>
@@ -987,6 +1005,16 @@ const HomePage = ({
                                                                         alt={
                                                                             value.title
                                                                         }
+                                                                        width={
+                                                                            value
+                                                                                .main_image
+                                                                                .width
+                                                                        }
+                                                                        height={
+                                                                            value
+                                                                                .main_image
+                                                                                .height
+                                                                        }
                                                                         className="image-lazy aspect-video h-full m-0 p-0 opacity-50 w-full object-cover"
                                                                         srcSet={`${value.main_image} 300w,
                                                                         ${value.main_image} 600w,
@@ -1090,9 +1118,19 @@ const HomePage = ({
                                                                         }
                                                                         className={`image-lazy w-fit aspect-video object-cover h-full me-3 hover:opacity-70`}
                                                                         loading="lazy"
+                                                                        width={
+                                                                            value
+                                                                                .main_image
+                                                                                .width
+                                                                        }
+                                                                        height={
+                                                                            value
+                                                                                .main_image
+                                                                                .height
+                                                                        }
                                                                         srcSet={`${value.main_image} 300w,
-                                                                    ${value.main_image} 600w,
-                                                                    ${value.main_image} 900w`}
+                                                                        ${value.main_image} 600w,
+                                                                        ${value.main_image} 900w`}
                                                                         sizes="(max-width: 300px) 100vw, (max-width: 600px) 50vw, (max-width: 900px) 33vw, 900px"
                                                                     />
                                                                 </picture>
@@ -1220,6 +1258,22 @@ const HomePage = ({
                                                                                   .desktop_webp_image
                                                                             : ""
                                                                     }
+                                                                    height={
+                                                                        premium_ads !==
+                                                                            undefined &&
+                                                                        premium_ads[2]
+                                                                            ? premium_ads[2]
+                                                                                  .height
+                                                                            : ""
+                                                                    }
+                                                                    width={
+                                                                        premium_ads !==
+                                                                            undefined &&
+                                                                        premium_ads[2]
+                                                                            ? premium_ads[2]
+                                                                                  .width
+                                                                            : ""
+                                                                    }
                                                                     alt="premium-ads"
                                                                     loading="lazy"
                                                                     fetchpriority="high"
@@ -1290,6 +1344,7 @@ const HomePage = ({
                                                                         }
                                                                         alt="regular_banner"
                                                                         loading="lazy"
+                                                                        fetchPriority="high"
                                                                         width={
                                                                             value
                                                                                 .desktop_ad_file

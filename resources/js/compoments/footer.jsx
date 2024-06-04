@@ -148,9 +148,9 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-100">
+                            <h4 className="mb-6 text-sm font-semibold text-gray-100">
                                 Media Premium
-                            </h2>
+                            </h4>
                             <ul className="text-gray-300 ">
                                 <li>
                                     <a
@@ -165,9 +165,9 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-100">
+                            <h4 className="mb-6 text-sm font-semibold text-gray-100">
                                 Subscribe Us
-                            </h2>
+                            </h4>
                             <ul className="text-gray-400 font-medium">
                                 <li className="mb-4">
                                     <div className="grid grid-cols-3 lg:flex">

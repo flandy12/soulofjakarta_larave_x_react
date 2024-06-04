@@ -65,9 +65,9 @@ const RecommendationArticle = ({ data_value, image_ads, status, url }) => {
                         status ? "py-5" : "pb-5"
                     } xl:px-3 md:px-3 mt-5`}
                 >
-                    <h2 className="font-semibold wrapper-title xl:text-base lg:text-sm md:text-sm ">
+                    <h4 className="font-semibold wrapper-title xl:text-base lg:text-sm md:text-sm ">
                         Rekomendasi Terpopuler
-                    </h2>
+                    </h4>
                     <a
                         href={`/artikel/rekomendasi`}
                         className="text-sm xl:text-sm lg:text-sm md:text-xs"
