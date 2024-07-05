@@ -109,6 +109,8 @@ const Navbar = ({ children }) => {
                                         src="/images/icon/SOUJA-LOGO-HITAM.png"
                                         alt="soulofjakarta.id"
                                         className="h-20 mr-3 logo-navbar"
+                                        loading="lazy"
+                                        fetchpriority="high"
                                     />
                                 </picture>
                             </a>

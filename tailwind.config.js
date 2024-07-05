@@ -3,6 +3,7 @@ export default {
     content: [
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        "./resources/js/**/*.css",
         "./resources/js/**/*.js",
         "./resources/js/**/*.jsx",
     ],

@@ -209,26 +209,27 @@ const Footer = () => {
                         </span>
 
                         <div className="flex text-center flex-col md:flex-row gap-2 mt-4 md:space-x-5 sm:justify-center sm:mt-0 footer-group text-gray-400 z-10">
-                            <a href="advertise" target="_blank" rel="noopener">
-                                {" "}
-                                Advertise
-                            </a>
                             <a
-                                href="privacy-policy"
+                                href="pasang-iklan"
                                 target="_blank"
                                 rel="noopener"
                             >
-                                {" "}
-                                Privacy Policy
+                                Pasang Iklan
                             </a>
                             <a
-                                href="terms-conditions"
+                                href="kebijakan-privasi"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Kebijakan Privasi
+                            </a>
+                            <a
+                                href="syarat-ketentuan"
                                 target="_blank"
                                 rel="noopener"
                                 className="hover:text-master"
                             >
-                                {" "}
-                                Terms & Conditions{" "}
+                                Syarat Dan Ketentuan
                             </a>
                         </div>
                     </div>

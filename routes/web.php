@@ -17,11 +17,11 @@ use Inertia\Inertia;
 
 Route::get('/', [ArtikelController::class, 'home']);
 
-Route::get('/privacy-policy', [ ArtikelController::class, 'privacyPolicy' ]);
+Route::get('/kebijakan-privasi', [ ArtikelController::class, 'privacyPolicy' ]);
+Route::get('/pasang-iklan',[ ArtikelController::class, "advertise"]);
+Route::get('/syarat-ketentuan', [ ArtikelController::class, 'termsConditions' ]);
 
 Route::get('/media-partner', [ ArtikelController::class, 'medpar' ]); 
-Route::get('/advertise',[ ArtikelController::class, "advertise"]);
-Route::get('/terms-conditions', [ ArtikelController::class, 'termsConditions' ]);
 
 Route::get('/indeks/{search}/{category}/{subcategory}', [ ArtikelController::class, 'index' ]); 
 Route::get('/indeks/{search}/{category}/', [ ArtikelController::class, 'index' ]); 

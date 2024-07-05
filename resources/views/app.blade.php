@@ -26,9 +26,15 @@
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
        
-        <link rel="canonical" href="https://13.250.116.98" />
+        <link rel="canonical" href="{{ url()->full() }}" />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q062G19HNS"></script>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('/css/App.min.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('/css/error.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('/css/frontend.min.css') }}" rel="stylesheet" media="all"> -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q062G19HNS"></script>
     
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -38,9 +44,9 @@
             }
             gtag('js', new Date());
             gtag('config', 'G-Q062G19HNS')
-        </script>
+        </script> -->
 
-        @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+        @vite(['resources/css/app.css','resources/css/App.min.css','resources/css/error.css','resources/css/frontend.min.css', 'resources/js/app.jsx'])
         {{-- @routes --}}
 
         @vite('resources/js/app.jsx')

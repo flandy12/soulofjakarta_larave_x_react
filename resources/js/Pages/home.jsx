@@ -91,596 +91,411 @@ const HomePage = ({
 
     const Headline = () => {
         return (
-            <div
-                className={`${
-                    background_banner_ads !== undefined &&
-                    background_banner_ads.length > 0
-                        ? ""
-                        : " "
-                }`}
-            >
-                <h1 className="hidden">
-                    SoulofJakarta - artikel Terkini dan terpoluler
-                </h1>
-                <div className="headline-wrappers ">
-                    <div className="grid mx-auto xl:grid-cols-8 md:grid-cols-8 xl:px-0 md:px-3 mobile-home">
-                        <div className="col"></div>
-                        <div className="xl:col-span-6 md:col-span-6">
-                            <div className="hidden xl:block md:block mobile-home-wrppper">
-                                <div className="mobile-ads-headline sticky top-16">
-                                    <AdsBennerDesktop
-                                        image={
-                                            background_banner_ads !==
-                                                undefined &&
-                                            background_banner_ads.length > 0
-                                                ? background_banner_ads[0]
-                                                      .mobile_webp_image
-                                                : ""
-                                        }
-                                        url={
-                                            background_banner_ads !==
-                                                undefined &&
-                                            background_banner_ads.length > 0
-                                                ? background_banner_ads[0].link
-                                                : ""
-                                        }
-                                        status={
-                                            background_banner_ads !==
-                                                undefined &&
-                                            background_banner_ads.length > 0
-                                                ? true
-                                                : false
-                                        }
-                                    />
-                                </div>
-
-                                <div
-                                    className={` ${
-                                        background_banner_ads !== undefined &&
-                                        background_banner_ads.length > 0 &&
-                                        background_banner_ads[0]
-                                            .mobile_webp_image
-                                            ? "hidden"
-                                            : "desktop-ads-headline"
-                                    }`}
-                                >
-                                    <AdsBennerDesktop
-                                        image={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? headline_ads[0]
-                                                      .desktop_webp_image
-                                                : ""
-                                        }
-                                        url={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? headline_ads[0].link
-                                                : ""
-                                        }
-                                        status={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? true
-                                                : false
-                                        }
-                                    />
-                                </div>
-
-                                {/* <div className="relative z-40 ">
-                                    <Swiper
-                                        slidesPerView={"auto"}
-                                        spaceBetween={30}
-                                        centeredSlides={true}
-                                        autoplay={{
-                                            delay: 2500,
-                                            disableOnInteraction: false,
-                                        }}
-                                        effect="fade"
-                                        modules={[Autoplay]}
-                                    >
-                                        <SwiperSlide>
-                                            <a
-                                                key={0}
-                                                href={`${
-                                                    headlines[0]
-                                                        ? `${removeSpace(
-                                                              headlines[0].category.name.toLocaleLowerCase()
-                                                          )}/${
-                                                              headlines[0]
-                                                                  .sj_code
-                                                          }/${removeSpace(
-                                                              headlines[0].title.toLocaleLowerCase()
-                                                          )}`
-                                                        : ""
-                                                }`}
-                                                className="relative"
-                                            >
-                                                <picture>
-                                                    <source
-                                                        type="image/webp"
-                                                        srcSet={`${
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .webp_image
-                                                                : ""
-                                                        }`}
-                                                    />
-                                                    <img
-                                                        className="opacity-70 object-cover h-48 w-full swiper-image"
-                                                        src={
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .main_image
-                                                                : ""
-                                                        }
-                                                        alt={
-                                                            headlines[1]
-                                                                ? headlines[0]
-                                                                      .title
-                                                                : ""
-                                                        }
-                                                        loading="lazy"
-                                                        fetchpriority="high"
-                                                    />
-                                                </picture>
-                                                <div className="absolute bottom-2 mx-2 text-white swiper-content">
-                                                    <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm ">
-                                                        {headlines[0]
-                                                            ? headlines[0]
-                                                                  .category.name
-                                                            : ""}
-                                                    </span>
-                                                    <p className="text-sm mt-2">
-                                                        {headlines[0]
-                                                            ? headlines[0]
-                                                                  .publish_date
-                                                            : ""}
-                                                    </p>
-                                                    <h2 className="text-base  font-root-headline font-base">
-                                                        {headlines[0]
-                                                            ? headlines[0].title
-                                                            : ""}
-                                                    </h2>
-                                                </div>
-                                            </a>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <a
-                                                key={1}
-                                                href={`${
-                                                    headlines[1]
-                                                        ? `${headlines[1].category.name.toLocaleLowerCase()}/${
-                                                              headlines[1]
-                                                                  .sj_code
-                                                          }/>${removeSpace(
-                                                              headlines[1].title.toLocaleLowerCase()
-                                                          )}`
-                                                        : ""
-                                                }`}
-                                                className="relative"
-                                            >
-                                                <picture>
-                                                    <source
-                                                        type="image/webp"
-                                                        srcSet={`${
-                                                            headlines[1]
-                                                                ? headlines[1]
-                                                                      .webp_image
-                                                                : ""
-                                                        }`}
-                                                    />
-                                                    <img
-                                                        className="opacity-70 object-cover h-48 w-full swiper-image"
-                                                        src={
-                                                            headlines[1]
-                                                                ? headlines[1]
-                                                                      .main_image
-                                                                : ""
-                                                        }
-                                                        alt={
-                                                            headlines[1]
-                                                                ? headlines[1]
-                                                                      .title
-                                                                : ""
-                                                        }
-                                                        loading="lazy"
-                                                        fetchpriority="high"
-                                                    />
-                                                </picture>
-
-                                                <div className="absolute bottom-2 mx-2 text-white swiper-content">
-                                                    <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm">
-                                                        {headlines[1]
-                                                            ? headlines[1]
-                                                                  .category.name
-                                                            : ""}
-                                                    </span>
-                                                    <p className="text-sm mt-2">
-                                                        {headlines[1]
-                                                            ? headlines[1]
-                                                                  .publish_date
-                                                            : ""}
-                                                    </p>
-                                                    <p className="text-base  font-root-headline font-base">
-                                                        {headlines[1]
-                                                            ? headlines[1].title
-                                                            : ""}
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <a
-                                                key={2}
-                                                href={`${
-                                                    headlines[2]
-                                                        ? `${headlines[2].category.name.toLocaleLowerCase()}/${
-                                                              headlines[2]
-                                                                  .sj_code
-                                                          }/${removeSpace(
-                                                              headlines[2].title.toLocaleLowerCase()
-                                                          )}`
-                                                        : ""
-                                                }`}
-                                                className="relative"
-                                            >
-                                                <picture>
-                                                    <source
-                                                        type="image/webp"
-                                                        srcSet={`${
-                                                            headlines[2]
-                                                                ? headlines[2]
-                                                                      .webp_image
-                                                                : ""
-                                                        }`}
-                                                    />
-                                                    <img
-                                                        className="opacity-70 object-cover xxxx w-full swiper-image"
-                                                        src={
-                                                            headlines[2]
-                                                                ? headlines[2]
-                                                                      .main_image
-                                                                : ""
-                                                        }
-                                                        alt={
-                                                            headlines[2]
-                                                                ? headlines[2]
-                                                                      .title
-                                                                : ""
-                                                        }
-                                                        loading="lazy"
-                                                        fetchpriority="high"
-                                                    />
-                                                </picture>
-
-                                                <div className="absolute bottom-2 mx-2 text-white swiper-content">
-                                                    <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm">
-                                                        {headlines[2]
-                                                            ? headlines[2]
-                                                                  .category.name
-                                                            : ""}
-                                                    </span>
-                                                    <p className="text-sm mt-2">
-                                                        {headlines[2]
-                                                            ? headlines[2]
-                                                                  .publish_date
-                                                            : ""}
-                                                    </p>
-                                                    <p className="text-base  font-root-headline font-base">
-                                                        {headlines[2]
-                                                            ? headlines[2].title
-                                                            : ""}
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </SwiperSlide>
-                                    </Swiper>
-                                </div> */}
-                            </div>
-                        </div>
-                        <div className="col"></div>
+          <div
+            className={`container${
+              background_banner_ads !== undefined &&
+              background_banner_ads.length > 0
+                ? ""
+                : " pt-7 "
+            }`}>
+            <h1 className="hidden">
+              SoulofJakarta - artikel Terkini dan terpoluler
+            </h1>
+            <div className="headline-wrappers bg-black">
+              <div className="grid mx-auto xl:grid-cols-8 md:grid-cols-8 xl:px-0 md:px-3 mobile-home">
+                <div className="col"></div>
+                <div className="xl:col-span-6 md:col-span-6">
+                  <div className="hidden xl:block md:block mobile-home-wrppper">
+                    <div className="mobile-ads-headline sticky top-16">
+                      <AdsBennerDesktop
+                        image={
+                          background_banner_ads !== undefined &&
+                          background_banner_ads.length > 0
+                            ? background_banner_ads[0].mobile_webp_image
+                            : ""
+                        }
+                        url={
+                          background_banner_ads !== undefined &&
+                          background_banner_ads.length > 0
+                            ? background_banner_ads[0].link
+                            : ""
+                        }
+                        status={
+                          background_banner_ads !== undefined &&
+                          background_banner_ads.length > 0
+                            ? true
+                            : false
+                        }
+                      />
                     </div>
-                    <div className="grid gap-2 mx-auto desktop-home ">
-                        <div className="xl:col-span-6 md:col-span-6 container">
-                            <div className="hidden xl:block md:block relative z-40 ">
-                                <div className="desktop-ads-headline sticky top-16">
-                                    <AdsBennerDesktop
-                                        image={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? headline_ads[0]
-                                                      .desktop_webp_image
-                                                : ""
-                                        }
-                                        url={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? headline_ads[0].link
-                                                : ""
-                                        }
-                                        status={
-                                            headline_ads !== undefined &&
-                                            headline_ads.length > 0
-                                                ? true
-                                                : false
-                                        }
-                                    />
-
-                                    <div className="grid grid-cols-3 relative z-40 bg-black">
-                                        <div className=" col-span-2 relative">
-                                            <a
-                                                key={0}
-                                                href={`${
-                                                    headlines[0]
-                                                        ? `${removeSpace(
-                                                              headlines[0].category.name.toLocaleLowerCase()
-                                                          )}/${
-                                                              headlines[0]
-                                                                  .sj_code
-                                                          }/${removeSpace(
-                                                              headlines[0].title.toLocaleLowerCase()
-                                                          )}`
-                                                        : ""
-                                                }`}
-                                                className="m-0 bg-black hover:opacity-80"
-                                            >
-                                                <picture>
-                                                    <source
-                                                        type="image/webp"
-                                                        srcSet={`${
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .webp_image
-                                                                : ""
-                                                        }`}
-                                                    />
-                                                    <img
-                                                        loading="lazy"
-                                                        fetchPriority="high"
-                                                        src={
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .main_image
-                                                                : ""
-                                                        }
-                                                        alt={
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .title
-                                                                : ""
-                                                        }
-                                                        height={
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .main_image
-                                                                      .height
-                                                                : ""
-                                                        }
-                                                        width={
-                                                            headlines[0]
-                                                                ? headlines[0]
-                                                                      .main_image
-                                                                      .width
-                                                                : ""
-                                                        }
-                                                        className="opacity-50 object-cover h-full"
-                                                    />
-                                                </picture>
-
-                                                <div className="absolute bottom-0 mx-5 mb-5 text-white">
-                                                    <span className="xl:text-base md:text-xs font-semibold category-span font-base">
-                                                        {headlines[0]
-                                                            ? headlines[0]
-                                                                  .category.name
-                                                            : ""}
-                                                    </span>
-                                                    <p className="text-base mt-2 ">
-                                                        {headlines[0]
-                                                            ? headlines[0]
-                                                                  .publish_date
-                                                            : ""}
-                                                    </p>
-                                                    <h1 className="xl:text-xl md:text-xl  font-root-headline mt-2">
-                                                        {headlines[0]
-                                                            ? headlines[0].title
-                                                            : ""}
-                                                    </h1>
-                                                    <p className="text-base text-gray-100">
-                                                        {headlines[0]
-                                                            ? headlines[0]
-                                                                  .sort_description
-                                                            : ""}
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div className="col">
-                                            <div className="flex flex-wrap bg-black">
-                                                <div className="bg-black">
-                                                    <a
-                                                        key={1}
-                                                        href={`${
-                                                            headlines[1]
-                                                                ? `/${removeSpace(
-                                                                      headlines[1].category.name.toLocaleLowerCase()
-                                                                  )}/${
-                                                                      headlines[1]
-                                                                          .sj_code
-                                                                  }/${removeSpace(
-                                                                      headlines[1].title.toLocaleLowerCase()
-                                                                  )}`
-                                                                : ""
-                                                        }`}
-                                                        className="relative w-full hover:opacity-80"
-                                                    >
-                                                        <picture>
-                                                            <source
-                                                                type="image/webp"
-                                                                srcSet={`${
-                                                                    headlines[1]
-                                                                        ? headlines[1]
-                                                                              .webp_image
-                                                                        : ""
-                                                                }`}
-                                                            />
-                                                            <img
-                                                                loading="lazy"
-                                                                fetchpriority="high"
-                                                                src={
-                                                                    headlines[1]
-                                                                        ? headlines[1]
-                                                                              .main_image
-                                                                        : ""
-                                                                }
-                                                                alt={
-                                                                    headlines[1]
-                                                                        ? headlines[1]
-                                                                              .title
-                                                                        : ""
-                                                                }
-                                                                height={
-                                                                    headlines[1]
-                                                                        ? headlines[1]
-                                                                              .main_image
-                                                                              .height
-                                                                        : ""
-                                                                }
-                                                                width={
-                                                                    headlines[1]
-                                                                        ? headlines[1]
-                                                                              .main_image
-                                                                              .width
-                                                                        : ""
-                                                                }
-                                                                className="h-full opacity-50 object-cover"
-                                                            />
-                                                        </picture>
-
-                                                        <div className="absolute bottom-0 ml-2 mr-2 xl:mb-5 md:mb-2 text-white">
-                                                            <span
-                                                                className="xl:text-base md:text-xs font-semibold category-span mb-5 font-sm 
-                                                                "
-                                                            >
-                                                                {headlines[1]
-                                                                    ? headlines[1]
-                                                                          .category
-                                                                          .name
-                                                                    : ""}
-                                                            </span>
-                                                            <p className="xl:text-sm md:text-xs mt-2 font-semi-publish  mb-2 font-sm">
-                                                                {headlines[1]
-                                                                    ? headlines[1]
-                                                                          .publish_date
-                                                                    : ""}
-                                                            </p>
-                                                            <h1 className="font-semibold xl:text-base md:text-sm font-root-headline font-semi-headline ">
-                                                                {headlines[1]
-                                                                    ? headlines[1]
-                                                                          .title
-                                                                    : ""}
-                                                            </h1>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div className="bg-black">
-                                                    <a
-                                                        key={2}
-                                                        href={`${
-                                                            headlines[2]
-                                                                ? `/${removeSpace(
-                                                                      headlines[2].category.name.toLocaleLowerCase()
-                                                                  )}/${
-                                                                      headlines[2]
-                                                                          .sj_code
-                                                                  }/${removeSpace(
-                                                                      headlines[2].title.toLocaleLowerCase()
-                                                                  )}`
-                                                                : ""
-                                                        }`}
-                                                        className="relative bg-black hover:opacity-80"
-                                                    >
-                                                        <picture>
-                                                            <source
-                                                                type="image/webp"
-                                                                srcSet={`${
-                                                                    headlines[2]
-                                                                        ? headlines[2]
-                                                                              .webp_image
-                                                                        : ""
-                                                                }`}
-                                                            />
-                                                            <img
-                                                                loading="lazy"
-                                                                fetchPriority="high"
-                                                                src={
-                                                                    headlines[2]
-                                                                        ? headlines[2]
-                                                                              .main_image
-                                                                        : ""
-                                                                }
-                                                                alt={
-                                                                    headlines[2]
-                                                                        ? headlines[2]
-                                                                              .title
-                                                                        : ""
-                                                                }
-                                                                height={
-                                                                    headlines[2]
-                                                                        ? headlines[2]
-                                                                              .main_image
-                                                                              .height
-                                                                        : ""
-                                                                }
-                                                                width={
-                                                                    headlines[2]
-                                                                        ? headlines[2]
-                                                                              .main_image
-                                                                              .width
-                                                                        : ""
-                                                                }
-                                                                className="h-full opacity-50 object-cover"
-                                                            />
-                                                        </picture>
-
-                                                        <div className="absolute bottom-0 ml-2 mr-2 xl:mb-5 md:mb-2 text-white">
-                                                            <span
-                                                                className="xl:text-base md:text-xs font-semibold category-span mb-5 font-sm 
-                                                                "
-                                                            >
-                                                                {headlines[2]
-                                                                    ? headlines[2]
-                                                                          .category
-                                                                          .name
-                                                                    : ""}
-                                                            </span>
-                                                            <p className="xl:text-sm md:text-xs mt-2 mb-2 font-semi-publish font-sm">
-                                                                {headlines[2]
-                                                                    ? headlines[2]
-                                                                          .publish_date
-                                                                    : ""}
-                                                            </p>
-                                                            <h1 className="font-semibold xl:text-lg md:text-sm font-root-headline font-semi-headline ">
-                                                                {headlines[2]
-                                                                    ? headlines[2]
-                                                                          .title
-                                                                    : ""}
-                                                            </h1>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    
+                    <div
+                      className={` ${
+                        background_banner_ads !== undefined &&
+                        background_banner_ads.length > 0 &&
+                        background_banner_ads[0].mobile_webp_image
+                          ? "hidden"
+                          : "desktop-ads-headline"
+                      }`}>
+                      <AdsBennerDesktop
+                        image={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? headline_ads[0].desktop_webp_image
+                            : ""
+                        }
+                        url={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? headline_ads[0].link
+                            : ""
+                        }
+                        status={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? true
+                            : false
+                        }
+                      />
                     </div>
+    
+                    <div className="relative z-40 bg-black">
+                      <Swiper
+                        slidesPerView={"auto"}
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                          delay: 2500,
+                          disableOnInteraction: false
+                        }}
+                        effect="fade"
+                        modules={[Autoplay]}>
+                        <SwiperSlide>
+                          <a
+                            key={0}
+                            href={`${
+                              headlines[0]
+                                ? `${removeSpace(
+                                    headlines[0].category.name.toLocaleLowerCase()
+                                  )}/${headlines[0].sj_code}/${removeSpace(
+                                    headlines[0].title.toLocaleLowerCase()
+                                  )}`
+                                : ""
+                            }`}
+                            className="relative">
+                            <picture>
+                              <source
+                                type="image/webp"
+                                srcSet={`${
+                                  headlines[0] ? headlines[0].webp_image : ""
+                                }`}
+                              />
+                              <img
+                                className="opacity-70 object-cover h-48 w-full swiper-image"
+                                src={headlines[0] ? headlines[0].main_image : ""}
+                                alt={headlines[1] ? headlines[0].title : ""}
+                                loading="lazy"
+                                fetchpriority="high"
+                              />
+                            </picture>
+                            <div className="absolute bottom-2 mx-2 text-white swiper-content">
+                              <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm ">
+                                {headlines[0] ? headlines[0].category.name : ""}
+                              </span>
+                              <p className="text-sm mt-2">
+                                {headlines[0] ? headlines[0].publish_date : ""}
+                              </p>
+                              <h2 className="text-base  font-root-headline font-base">
+                                {headlines[0] ? headlines[0].title : ""}
+                              </h2>
+                            </div>
+                          </a>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <a
+                            key={1}
+                            href={`${
+                              headlines[1]
+                                ? `${headlines[1].category.name.toLocaleLowerCase()}/${
+                                    headlines[1].sj_code
+                                  }/>${removeSpace(
+                                    headlines[1].title.toLocaleLowerCase()
+                                  )}`
+                                : ""
+                            }`}
+                            className="relative">
+                            <picture>
+                              <source
+                                type="image/webp"
+                                srcSet={`${
+                                  headlines[1] ? headlines[1].webp_image : ""
+                                }`}
+                              />
+                              <img
+                                className="opacity-70 object-cover h-48 w-full swiper-image"
+                                src={headlines[1] ? headlines[1].main_image : ""}
+                                alt={headlines[1] ? headlines[1].title : ""}
+                                loading="lazy"
+                                fetchpriority="high"
+                              />
+                            </picture>
+    
+                            <div className="absolute bottom-2 mx-2 text-white swiper-content">
+                              <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm">
+                                {headlines[1] ? headlines[1].category.name : ""}
+                              </span>
+                              <p className="text-sm mt-2">
+                                {headlines[1] ? headlines[1].publish_date : ""}
+                              </p>
+                              <p className="text-base  font-root-headline font-base">
+                                {headlines[1] ? headlines[1].title : ""}
+                              </p>
+                            </div>
+                          </a>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <a
+                            key={2}
+                            href={`${
+                              headlines[2]
+                                ? `${headlines[2].category.name.toLocaleLowerCase()}/${
+                                    headlines[2].sj_code
+                                  }/${removeSpace(
+                                    headlines[2].title.toLocaleLowerCase()
+                                  )}`
+                                : ""
+                            }`}
+                            className="relative">
+                            <picture>
+                              <source
+                                type="image/webp"
+                                srcSet={`${
+                                  headlines[2] ? headlines[2].webp_image : ""
+                                }`}
+                              />
+                              <img
+                                className="opacity-70 object-cover xxxx w-full swiper-image"
+                                src={headlines[2] ? headlines[2].main_image : ""}
+                                alt={headlines[2] ? headlines[2].title : ""}
+                                loading="lazy"
+                                fetchpriority="high"
+                              />
+                            </picture>
+    
+                            <div className="absolute bottom-2 mx-2 text-white swiper-content">
+                              <span className=" w-fit px-2 mb-3 text-black category-span text-sm xl:text-sm md:text-sm font-sm">
+                                {headlines[2] ? headlines[2].category.name : ""}
+                              </span>
+                              <p className="text-sm mt-2">
+                                {headlines[2] ? headlines[2].publish_date : ""}
+                              </p>
+                              <p className="text-base  font-root-headline font-base">
+                                {headlines[2] ? headlines[2].title : ""}
+                              </p>
+                            </div>
+                          </a>
+                        </SwiperSlide>
+                      </Swiper>
+                    </div>
+                  </div>
                 </div>
+                <div className="col"></div>
+              </div>
+              <div className="grid gap-2 mx-auto desktop-home bg-black">
+                <div className="xl:col-span-6 md:col-span-6">
+                  <div className="hidden xl:block md:block relative z-40 bg-black">
+                    <div className="desktop-ads-headline sticky top-16">
+                      <AdsBennerDesktop
+                        image={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? headline_ads[0].desktop_webp_image
+                            : ""
+                        }
+                        url={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? headline_ads[0].link
+                            : ""
+                        }
+                        status={
+                          headline_ads !== undefined && headline_ads.length > 0
+                            ? true
+                            : false
+                        }
+                      />
+    
+                      <div className="grid grid-cols-3 relative z-40 bg-black">
+                        <div className=" col-span-2 relative">
+                          <a
+                            key={0}
+                            href={`${
+                              headlines[0]
+                                ? `${removeSpace(
+                                    headlines[0].category.name.toLocaleLowerCase()
+                                  )}/${headlines[0].sj_code}/${removeSpace(
+                                    headlines[0].title.toLocaleLowerCase()
+                                  )}`
+                                : ""
+                            }`}
+                            className="m-0 bg-black hover:opacity-80">
+                            <picture>
+                              <source
+                                type="image/webp"
+                                srcSet={`${
+                                  headlines[0] ? headlines[0].webp_image : ""
+                                }`}
+                              />
+                              <img
+                                loading="lazy"
+                                src={headlines[0] ? headlines[0].main_image : ""}
+                                alt={headlines[0] ? headlines[0].title : ""}
+                                height={
+                                  headlines[0] ? headlines[0].main_image.height : ""
+                                }
+                                width={
+                                  headlines[0] ? headlines[0].main_image.width : ""
+                                }
+                                className="opacity-50 object-cover h-full"
+                              />
+                            </picture>
+    
+                            <div className="absolute bottom-0 mx-5 mb-5 text-white">
+                              <span className="xl:text-base md:text-xs font-semibold category-span font-base">
+                                {headlines[0] ? headlines[0].category.name : ""}
+                              </span>
+                              <p className="text-base mt-2 ">
+                                {headlines[0] ? headlines[0].publish_date : ""}
+                              </p>
+                              <h1 className="xl:text-xl md:text-xl  font-root-headline mt-2">
+                                {headlines[0] ? headlines[0].title : ""}
+                              </h1>
+                              <p className="text-base text-gray-100">
+                                {headlines[0] ? headlines[0].sort_description : ""}
+                              </p>
+                            </div>
+                          </a>
+                        </div>
+    
+                        <div className="col">
+                          <div className="flex flex-wrap bg-black">
+                            <div className="bg-black">
+                              <a
+                                key={1}
+                                href={`${
+                                  headlines[1]
+                                    ? `/${removeSpace(
+                                        headlines[1].category.name.toLocaleLowerCase()
+                                      )}/${headlines[1].sj_code}/${removeSpace(
+                                        headlines[1].title.toLocaleLowerCase()
+                                      )}`
+                                    : ""
+                                }`}
+                                className="relative w-full hover:opacity-80">
+                                <picture>
+                                  <source
+                                    type="image/webp"
+                                    srcSet={`${
+                                      headlines[1] ? headlines[1].webp_image : ""
+                                    }`}
+                                  />
+                                  <img
+                                    loading="lazy"
+                                    src={
+                                      headlines[1] ? headlines[1].main_image : ""
+                                    }
+                                    alt={headlines[1] ? headlines[1].title : ""}
+                                    height={
+                                      headlines[1]
+                                        ? headlines[1].main_image.height
+                                        : ""
+                                    }
+                                    width={
+                                      headlines[1]
+                                        ? headlines[1].main_image.width
+                                        : ""
+                                    }
+                                    className="h-full opacity-50 object-cover"
+                                  />
+                                </picture>
+    
+                                <div className="absolute bottom-0 ml-2 mr-2 xl:mb-5 md:mb-2 text-white">
+                                  <span
+                                    className="xl:text-base md:text-xs font-semibold category-span mb-5 font-sm 
+                                                                ">
+                                    {headlines[1] ? headlines[1].category.name : ""}
+                                  </span>
+                                  <p className="xl:text-sm md:text-xs mt-2 font-semi-publish  mb-2 font-sm">
+                                    {headlines[1] ? headlines[1].publish_date : ""}
+                                  </p>
+                                  <h1 className="font-semibold xl:text-base md:text-sm font-root-headline font-semi-headline ">
+                                    {headlines[1] ? headlines[1].title : ""}
+                                  </h1>
+                                </div>
+                              </a>
+                            </div>
+                            <div className="bg-black">
+                              <a
+                                key={2}
+                                href={`${
+                                  headlines[2]
+                                    ? `/${removeSpace(
+                                        headlines[2].category.name.toLocaleLowerCase()
+                                      )}/${headlines[2].sj_code}/${removeSpace(
+                                        headlines[2].title.toLocaleLowerCase()
+                                      )}`
+                                    : ""
+                                }`}
+                                className="relative bg-black hover:opacity-80">
+                                <picture>
+                                  <source
+                                    type="image/webp"
+                                    srcSet={`${
+                                      headlines[2] ? headlines[2].webp_image : ""
+                                    }`}
+                                  />
+                                  <img
+                                    loading="lazy"
+                                    src={
+                                      headlines[2] ? headlines[2].main_image : ""
+                                    }
+                                    alt={headlines[2] ? headlines[2].title : ""}
+                                    height={
+                                      headlines[2]
+                                        ? headlines[2].main_image.height
+                                        : ""
+                                    }
+                                    width={
+                                      headlines[2]
+                                        ? headlines[2].main_image.width
+                                        : ""
+                                    }
+                                    className="h-full opacity-50 object-cover"
+                                  />
+                                </picture>
+    
+                                <div className="absolute bottom-0 ml-2 mr-2 xl:mb-5 md:mb-2 text-white">
+                                  <span
+                                    className="xl:text-base md:text-xs font-semibold category-span mb-5 font-sm 
+                                                                ">
+                                    {headlines[2] ? headlines[2].category.name : ""}
+                                  </span>
+                                  <p className="xl:text-sm md:text-xs mt-2 mb-2 font-semi-publish font-sm">
+                                    {headlines[2] ? headlines[2].publish_date : ""}
+                                  </p>
+                                  <h1 className="font-semibold xl:text-lg md:text-sm font-root-headline font-semi-headline ">
+                                    {headlines[2] ? headlines[2].title : ""}
+                                  </h1>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         );
     };
+
     const onClikClose = () => {
         setIsActivePopupImage(true);
     };
@@ -757,7 +572,7 @@ const HomePage = ({
                                     }
                                     className="w-[400px]"
                                     alt="ads-image"
-                                    fetchPriority="high"
+                                    fetchpriority="high"
                                 />
                             </picture>
                         </a>
@@ -1344,7 +1159,7 @@ const HomePage = ({
                                                                         }
                                                                         alt="regular_banner"
                                                                         loading="lazy"
-                                                                        fetchPriority="high"
+                                                                        fetchpriority="high"
                                                                         width={
                                                                             value
                                                                                 .desktop_ad_file
@@ -1355,11 +1170,8 @@ const HomePage = ({
                                                                                 .desktop_ad_file
                                                                                 .height
                                                                         }
-                                                                        srcSet={`${value.desktop_ad_file} 300w,
-                                                ${value.desktop_ad_file} 600w,
-                                                ${value.desktop_ad_file} 900w`}
+                                                                        srcSet={`${value.desktop_ad_file} 300w,${value.desktop_ad_file} 600w, ${value.desktop_ad_file} 900w`}
                                                                         sizes="(max-width: 300px) 100vw, (max-width: 600px) 50vw, (max-width: 900px) 33vw, 900px"
-                                                                        fetchpriority="high"
                                                                     />
                                                                 </picture>
                                                             </a>

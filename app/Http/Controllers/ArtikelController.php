@@ -54,11 +54,11 @@ class ArtikelController extends Controller
         //Call Function API Article Ads Awarenes
         awarenes_article_ads($DataAPI['content']['results']['article_ads'],'article_ads');
 
-        $meta=['title' => 'SoulofJakartaid - Update Event and Lifestyle Information',
+        $meta=['title' => 'SoulofJakarta.id - Update Event and Lifestyle Information',
         'meta_keywords' => 'Soulofjakarta,soul,jakarta,artikel,artikel rekomendasi,artikel promote,hot artikel,artikel terpopuler,event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
         'meta_description' => 'Indeks artikel terkini dan terbaru hari ini untuk generasi milenials, gen X, Y dan Z tentang event dan lifestyle khusus di Indonesia dan Internasional',
         'author' => 'Soulofjakarta', 
-        'og_image' => asset('images/logo_souja.jpg')];
+        'og_image' => asset('images/logo_souja_update.png')];
         
         return Inertia('home', [
             'Headlines' => $Headlines,
@@ -137,7 +137,7 @@ class ArtikelController extends Controller
         'meta_keywords' => $meta_keywords,
         'meta_description' => $meta_description,
         'author' => $Detail_Article['author'],
-        'og_image' => asset('images/logo_souja.jpg')];
+        'og_image' => $Detail_Article['main_image']];
 
         return Inertia('category/index', [
             'Detail_Article' => $Detail_Article,
@@ -246,7 +246,7 @@ class ArtikelController extends Controller
         if(isset($category_first) || $category) {
                 $meta_title = $category_first . $sub_category_first . ' Soulofjakarta.id '.'Update '. ucfirst($category) . ' Information';
         } else {
-                $meta_title = "SoulofJakartaid - Update Event and Lifestyle Information";
+                $meta_title = "SoulofJakarta.id - Update Event and Lifestyle Information";
         }
 
         $page_num = $page ? $page : 1;
@@ -275,7 +275,7 @@ class ArtikelController extends Controller
         'meta_keywords' => 'Indeks artikel terkini dan terbaru hari ini untuk generasi milenials, gen X, Y dan Z tentang event dan lifestyle khusus di Indonesia dan Internasional',
         'meta_description' => 'Artikel terkini dan terbaru hari ini dari event dan lifestyle khusus di Indonesia  dan Internasional',
         'author' => 'Soulofjakarta',
-        'og_image' => asset('images/logo_souja.jpg')];
+        'og_image' => asset('images/logo_souja_update.png')];
         
         return Inertia('artikel/index', [
             'data_index' => $data_index,
@@ -394,7 +394,7 @@ class ArtikelController extends Controller
         'meta_keywords' => 'Soulofjakarta,soul,jakarta, event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
         'meta_description' => 'Artikel rekomendasi Soulofjakarta tentang event dan lifestyle di Indonesia dan Internasional',
         'author' => 'Soulofjakarta',
-        'og_image' => asset('images/logo_souja.jpg')];
+        'og_image' => asset('images/logo_souja_update.png')];
         
         return Inertia('artikel/populer/page', [
             'Popular_Article_Index' => $Popular_Article_Index,
@@ -474,7 +474,7 @@ class ArtikelController extends Controller
          'meta_keywords' => 'Soulofjakarta,soul,jakarta, event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
          'meta_description' => 'Artikel rekomendasi Soulofjakarta tentang event dan lifestyle di Indonesia dan Internasional',
          'author' => 'Soulofjakarta',
-         'og_image' => asset('images/logo_souja.jpg')];
+         'og_image' => asset('images/logo_souja_update.png')];
 
         return Inertia('artikel/rekomendasi/page', [
             'Articles' => $Articles,
@@ -516,7 +516,7 @@ class ArtikelController extends Controller
         $meta=['title' => 'Soulofjakarta - Media Partner',
         'meta_keywords' => 'soulofjakarta media partner',
         'meta_description' => 'Menjadi media parner di SoulofJakarta banyak benefit',
-        'og_image' => asset('images/logo_souja.jpg'),
+        'og_image' => asset('images/logo_souja_update.png'),
         'author' => 'Soulofjakarta'];
 
         return Inertia('media-parners',
@@ -569,7 +569,7 @@ class ArtikelController extends Controller
         $pages_ = $DataAPI['content']['results']['articles']['original']['results']['pages'];
 
         $meta_page = $page ? $page : 1;
-        $meta_title = 'Give Away - SoulofJakartaid';
+        $meta_title = 'Give Away - SoulofJakarta.id';
     
         $page_num = $page ? $page : 1;
 
@@ -593,7 +593,7 @@ class ArtikelController extends Controller
         $meta=['title' => $meta_title,
         'meta_keywords' => 'soulofjakarta give away',
         'meta_description' => 'Give Away terkini dari event dan lifestyle khusus di Indonesia',
-        'og_image' => asset('images/logo_souja.jpg'),
+        'og_image' => asset('images/logo_souja_update.png'),
         'author' => 'Soulofjakarta'];
 
         return Inertia('give-away',  [
@@ -631,10 +631,10 @@ class ArtikelController extends Controller
          
          $Categories_Navbar = isset($DataAPI['content']['results']['categories']) ? $DataAPI['content']['results']['categories']: [];
 
-         $meta=['title' => 'SoulofJakartaid - Update Event and Lifestyle Information',
+         $meta=['title' => 'SoulofJakarta.id - Update Event and Lifestyle Information',
         'meta_keywords' => 'Soulofjakarta,soul,jakarta,artikel,artikel rekomendasi,artikel promote,hot artikel,artikel terpopuler,event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
         'meta_description' => 'Indeks artikel terkini dan terbaru hari ini untuk generasi milenials, gen X, Y dan Z tentang event dan lifestyle khusus di Indonesia dan Internasional',
-        'og_image' => asset('images/logo_souja.jpg'),
+        'og_image' => asset('images/logo_souja_update.png'),
         'author' => 'Soulofjakarta'];
         
          return Inertia('placing-ads', [
@@ -651,10 +651,10 @@ class ArtikelController extends Controller
         
         $Categories_Navbar = isset($DataAPI['content']['results']['categories']) ? $DataAPI['content']['results']['categories']: [];
 
-        $meta=['title' => 'SoulofJakartaid - Update Event and Lifestyle Information',
+        $meta=['title' => 'SoulofJakarta.id - Update Event and Lifestyle Information',
         'meta_keywords' => 'Soulofjakarta,soul,jakarta,artikel,artikel rekomendasi,artikel promote,hot artikel,artikel terpopuler,event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
         'meta_description' => 'Indeks artikel terkini dan terbaru hari ini untuk generasi milenials, gen X, Y dan Z tentang event dan lifestyle khusus di Indonesia dan Internasional',
-        'og_image' => asset('images/logo_souja.jpg'),
+        'og_image' => asset('images/logo_souja_update.png'),
         'author' => 'Soulofjakarta'];
 
         return Inertia('terms-condition', [
@@ -671,10 +671,10 @@ class ArtikelController extends Controller
     
     $Categories_Navbar = isset($DataAPI['content']['results']['categories']) ? $DataAPI['content']['results']['categories']: [];
 
-    $meta=['title' => 'SoulofJakartaid - Update Event and Lifestyle Information',
+    $meta=['title' => 'SoulofJakarta.id - Update Event and Lifestyle Information',
     'meta_keywords' => 'Soulofjakarta,soul,jakarta,artikel,artikel rekomendasi,artikel promote,hot artikel,artikel terpopuler,event,concert,exhibition,job fair,fashion,lifestyle,tourism,destination,hotel,hangout,career,coulinary,food,resto&cafe',
     'meta_description' => 'Indeks artikel terkini dan terbaru hari ini untuk generasi milenials, gen X, Y dan Z tentang event dan lifestyle khusus di Indonesia dan Internasional',
-    'og_image' => asset('images/logo_souja.jpg'),
+    'og_image' => asset('images/logo_souja_update.png'),
     'author' => 'Soulofjakarta'];
 
 
